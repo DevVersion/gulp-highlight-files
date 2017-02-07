@@ -9,7 +9,7 @@ $ npm install gulp-highlight-files --save-dev
 
 ### Example
 
-```ts
+```js
 const gulpHighlightFiles = require('gulp-highlight-files');
 
 /* Inside of the gulp task. */
