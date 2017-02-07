@@ -27,7 +27,7 @@ module.exports = (_options) => {
     }
 
     if (file.isStream()) {
-      this.emit('error', new util.PluginError('gulp-highlight', 'Streaming not supported'));
+      this.emit('error', new util.PluginError('gulp-highlight-files', 'Streaming is not supported'));
       return cb();
     }
 
