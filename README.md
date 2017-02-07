@@ -1,17 +1,16 @@
 # gulp-highlight-files
-Gulp plugin to highlight a set of files.
+Gulp plugin to highlight a set of files using [HighlightJS](https://highlightjs.org/).
 
 ### Installation
 
-`npm install gulp-highlight-files --save-dev`
+```bash
+$ npm install gulp-highlight-files --save-dev
+```
+
+### Example
 
 ```ts
 const gulpHighlightFiles = require('gulp-highlight-files');
-
-/* Custom options for the gulp plugin. */
-const options = {
-  languageMap: { ts: 'typescript' }
-};
 
 /* Inside of the gulp task. */
 return gulp.src('**/*.html')
@@ -20,11 +19,8 @@ return gulp.src('**/*.html')
 ```
 
 ### Configuration
-
-```ts
-type Options = {
-  language: string; // Force HighlightJS language
-  languageMap: any; // Map to overwrite languages
-  hljsOptions: any // Options for highlightjs
-}
-```
+| Name        | Type   | Description                                                     |
+|-------------|--------|-----------------------------------------------------------------|
+| language    | string | Explicit language to be used to highlight files.                |
+| languageMap | any    | Object that maps extensions to a specific HighlightJS language. |
+| hljsOptions | any    | Options being passed to HighlightJS.                            |
