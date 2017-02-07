@@ -1,0 +1,14 @@
+{
+  "name": "gulp-highlight-files",
+  "version": "0.0.1",
+  "description": "Gulp plugin to highlight given files",
+  "main": "index.js",
+  "repository": {},
+  "author": "Paul Gschwendtner <paulgschwendtner@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gulp-util": "^3.0.8",
+    "highlight.js": "^9.9.0",
+    "through2": "^2.0.3"
+  }
+}
