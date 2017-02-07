@@ -1,6 +1,6 @@
 {
   "name": "gulp-highlight-files",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Gulp plugin to highlight given files",
   "main": "index.js",
   "repository": {},
