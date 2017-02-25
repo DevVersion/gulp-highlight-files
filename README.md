@@ -1,6 +1,8 @@
 # gulp-highlight-files
 Gulp plugin to highlight a set of files using [HighlightJS](https://highlightjs.org/).
 
+See [on npm](https://www.npmjs.com/package/gulp-highlight-files)
+
 ### Installation
 
 ```bash
