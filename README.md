@@ -21,8 +21,9 @@ return gulp.src('**/*.html')
 ```
 
 ### Configuration
-| Name        | Type   | Description                                                     |
-|-------------|--------|-----------------------------------------------------------------|
-| language    | string | Explicit language to be used to highlight files.                |
-| languageMap | any    | Object that maps extensions to a specific HighlightJS language. |
-| hljsOptions | any    | Options being passed to HighlightJS.                            |
+| Name         | Type    | Description                                                     |
+|--------------|---------|-----------------------------------------------------------------|
+| language     | string  | Explicit language to be used to highlight files.                |
+| languageMap  | any     | Object that maps extensions to a specific HighlightJS language. |
+| hljsOptions  | any     | Options being passed to HighlightJS.                            |
+| ignoreSyntax | boolean | Whether syntax errors should be ignored. Default: `true`.       |

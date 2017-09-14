@@ -8,7 +8,8 @@ const path = require('path');
 const DEFAULT_OPTIONS = {
   language: null,
   languageMap: { ts: 'typescript' },
-  hljsConfig: {}
+  hljsConfig: {},
+  ignoreSyntax: true,
 };
 
 module.exports = (_options) => {
@@ -47,7 +48,7 @@ module.exports = (_options) => {
 
   /** Runs highlightjs against a given type. */
   function runHightlightJs(content, language) {
-    return hljs.highlight(language || 'html', content).value;
+    return hljs.highlight(language || 'html', content, options.ignoreSyntax).value;
   }
 
   /** Detects the hljs language name of a file. */
