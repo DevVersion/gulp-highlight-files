@@ -15,7 +15,7 @@ const DEFAULT_OPTIONS = {
 module.exports = (_options) => {
 
   // Write default options
-  let options = Object.assign({}, _options, DEFAULT_OPTIONS);
+  let options = Object.assign({}, DEFAULT_OPTIONS, _options);
 
   // Configure hljs with the specified options
   hljs.configure(options.hljsConfig);
