@@ -1,7 +1,7 @@
 'use strict';
 
 const through2 = require('through2');
-const util = require('gulp-util');
+const PluginError = require('plugin-error');
 const hljs = require('highlight.js');
 const path = require('path');
 
@@ -20,7 +20,7 @@ module.exports = (_options) => {
   // Configure hljs with the specified options
   hljs.configure(options.hljsConfig);
 
-  return through2.obj(function(file, enc, cb) {
+  return through2(function(file, enc, cb) {
 
     if (file.isNull()) {
       this.push(file);
@@ -28,7 +28,7 @@ module.exports = (_options) => {
     }
 
     if (file.isStream()) {
-      this.emit('error', new util.PluginError('gulp-highlight-files', 'Streaming is not supported'));
+      this.emit('error', new PluginError('gulp-highlight-files', 'Streaming is not supported'));
       return cb();
     }
 
@@ -36,10 +36,10 @@ module.exports = (_options) => {
     let contents = file.contents.toString();
 
     try {
-      file.contents = new Buffer(runHightlightJs(contents, language), options.buffer);
+      file.contents = new Buffer.from(runHightlightJs(contents, language), options.buffer);
       file.path = changeExtension(file.path, 'html');
     } catch (err) {
-      this.emit('error', new util.PluginError('gulp-highlight-files', err));
+      this.emit('error', new PluginError('gulp-highlight-files', err));
     }
 
     this.push(file);
